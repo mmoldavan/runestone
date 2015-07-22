@@ -103,7 +103,20 @@
         <!-- end social media dropdown -->
 
         <li class="divider-vertical"></li>
-
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            {{ if auth.user: }}
+              <li><a href='/{{=request.application}}/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+              <li><a href='/{{=request.application}}/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+              <li><a href='/{{=request.application}}/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+            {{ pass }}
+          </ul>
+        </li>
+        <li class="divider-vertical"></li>
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
